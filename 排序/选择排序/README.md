@@ -2,15 +2,15 @@
 
 - 利用选择排序进行解题（从小到大）
 - 每次循环都会把本次循环的最小值找出来，放到最左侧
-- 后面的每一次循环，都会减少一次循环，
-- 最后一个元素不需要循环
+- 后面的每一次循环，上一次已经找出的不参与循环运算， len - i
+- 最后一个元素不需要循环 len - 1
 
 
 # 分析算法
 
 ```javascript
 const selectedSort = function (arr) {
-  const len = arr.length;
+  const len = arr.length; // 保存arr的长度
   for (let i = 0; i < len - 1; i++) {
     for (let j = 1; j < len - i; j++>) {
       if (arr[j] < arr[j - 1]>) {
